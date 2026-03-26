@@ -1,0 +1,14 @@
+[Unit]
+Description=FinancasPro Flask Application
+After=network.target
+
+[Service]
+User=univates
+WorkingDirectory=/home/univates/financas
+ExecStart=/home/univates/financas/venv/bin/python app.py
+Restart=always
+RestartSec=5
+Environment=FLASK_ENV=production
+
+[Install]
+WantedBy=multi-user.target
